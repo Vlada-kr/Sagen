@@ -6,15 +6,24 @@ html {
 *::after {
   box-sizing: inherit;
 }
+html,
+body {
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
 body {
   font-family: "Playfair Display", sans-serif;
   font-size: 14px;
   font-weight: 400;
 }
-.container{
+.container {
   max-width: 1330px;
   padding: 0 15px;
-  margin: 0 auto;
+  margin: 0px auto;
+}
+.container__fluid {
+  padding-left: 90px;
 }
 a {
   display: inline-block;
@@ -45,10 +54,10 @@ li {
     z-index: 4;
   }
 }
-.line{
+.line {
   position: relative;
   padding-bottom: 30px;
-  &::before{
+  &::before {
     content: "";
     position: absolute;
     width: 40px;

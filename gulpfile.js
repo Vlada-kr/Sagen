@@ -44,10 +44,10 @@ gulp.task('script', function () {
 //указываются пути до css в node_modules
 gulp.task('style', function () {
     return gulp.src([
-            'node_modules/normalize.css/normalize.css',
-            'node_modules/slick-carousel/slick/slick.css',
-            'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css'
-        ])
+        'node_modules/normalize.css/normalize.css',
+        'node_modules/slick-carousel/slick/slick.css',
+        'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css'
+    ])
         .pipe(concat('libs.min.css'))
         .pipe(cssmin())
         .pipe(gulp.dest('app/css'))
@@ -59,7 +59,8 @@ gulp.task('browser-sync', function () {
     browserSync.init({
         server: {
             baseDir: "app/"
-        }
+        },
+        host: "192.168.0.103"
     });
 });
 
