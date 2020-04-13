@@ -34,7 +34,9 @@ gulp.task('js', function () {
 gulp.task('script', function () {
     return gulp.src([
         'node_modules/slick-carousel/slick/slick.min.js',
-        'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js'
+        'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+        'node_modules/wow.js/dist/wow.min.js',
+        'node_modules/easy-pie-chart/dist/jquery.easypiechart.min.js'
     ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
@@ -46,7 +48,8 @@ gulp.task('style', function () {
     return gulp.src([
         'node_modules/normalize.css/normalize.css',
         'node_modules/slick-carousel/slick/slick.css',
-        'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css'
+        'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
+        'node_modules/animate.css/animate.min.css'
     ])
         .pipe(concat('libs.min.css'))
         .pipe(cssmin())

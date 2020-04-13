@@ -1,16 +1,76 @@
 $(function () {
+    new WOW().init();
 
     $('.header__slider').slick({
         arrows: false,
         dots: true,
         fade: true,
-        speed: 1200,
+        autoplaySpeed: 5000,
         autoplay: true
     });
 
     $('.header__mobile-btn').on('click', function () {
         $('.nav__mobile').slideToggle();
     });
+
+    //сдайдер
+
+    $('.header__slider').on('swipe', function(event, slick, direction){
+        
+      });
+
+    var block_show1 = false;
+    var block_show2 = false;
+    function scrollTracking() {
+        if (block_show1 && block_show2) {
+            return false;
+        }
+        var wt = $(window).scrollTop();
+        var wh = $(window).height();
+        var et = $('.features-second__number').offset().top;
+        var eh = $('.features-second__number').outerHeight();
+        var ec = $('.chart').offset().top;
+        var ech = $('.chart').outerHeight();
+        var dh = $(document).height();
+        if (wt + wh >= et || wh + wt == dh || eh + et < wh) {
+            block_show1 = true;
+            $('.features-second__number').each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 2000,
+                    easing: 'linear',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        }
+        if (wt + wh >= ec || wh + wt == dh || ec + ech < wh) {
+            block_show2 = true;
+            $('.chart').easyPieChart({
+                trackColor: false,
+                scaleColor: false,
+                barColor: '#000',
+                size: 196,
+                lineWidth: 1,
+                onStep: function (from, to, percent) {
+                    $(this.el).find('.percent').text(Math.round(percent));
+                }
+            });
+        }
+    }
+    $(window).scroll(function () {
+        scrollTracking();
+    });
+
+    $(document).ready(function () {
+        scrollTracking();
+    });
+
+
+
+
 
     $('.header__btn').on('click', function () {
         $('.header__btn').toggleClass('active');

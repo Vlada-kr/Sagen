@@ -115,6 +115,11 @@
     }
 }
 @media (max-width: 1000px) {
+    .building::before {
+        border: 350px solid transparent;
+        border-left: 350px solid #edf7fa;
+        border-top: 350px solid #edf7fa;
+    }
     .header__mobile {
         background-color: #fff;
         height: 75px;
@@ -249,6 +254,11 @@
 }
 
 @media (max-width: 750px) {
+    .building::before {
+        border: 280px solid transparent;
+        border-left: 280px solid #edf7fa;
+        border-top: 280px solid #edf7fa;
+    }
     .header__item-inner {
         padding: 0 10px;
     }
@@ -297,6 +307,11 @@
     }
 }
 @media (max-width: 600px) {
+    .building::before {
+        border: 200px solid transparent;
+        border-left: 200px solid #edf7fa;
+        border-top: 200px solid #edf7fa;
+    }
     .header__mobile {
         padding: 0 10px;
     }
@@ -350,6 +365,11 @@
     }
 }
 @media (max-width: 450px) {
+    .building::before {
+        border: 150px solid transparent;
+        border-left: 150px solid #edf7fa;
+        border-top: 150px solid #edf7fa;
+    }
     .header__descr {
         font-size: 16px;
         margin-bottom: 30px;
