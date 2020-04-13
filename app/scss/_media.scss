@@ -126,7 +126,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-      }
+    }
     .header__descr {
         font-size: 20px;
     }
@@ -265,7 +265,10 @@
     .header__item .header__designer {
         bottom: 70px;
     }
-    .header__slider .slick-dots {
+    .header__slider .slick-dots li.slick-active::before {
+        display: none;
+    }
+    .header__slider .slick-dots{
         display: none;
     }
     .header__title {
